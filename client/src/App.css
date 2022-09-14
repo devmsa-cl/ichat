@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --max-width: 1140px;
+  --cl-dark-900: hsl(0, 0%, 13%);
+  --cl-dark-800: hsl(0, 0%, 23%);
+  --cl-dark-700: hsl(0, 0%, 33%);
+  --cl-dark-600: hsl(0deg 0% 40%);
+  --cl-dark-50: #f7fff7;
+
+  --light-bg: hsl(0, 0%, 100%);
+  --light-bg-100: hsl(0, 0%, 90%);
+
+  --cl-primary: hsl(259, 88%, 69%);
+  --cl-primary-800: hsl(259, 88%, 76%);
+
+  --cl-primary-dark: hsl(0deg 0% 23%);
+
+  --font--2: clamp(0.84rem, calc(0.94rem + -0.13vw), 0.91rem);
+  --font--1: clamp(1.09rem, calc(1.08rem + 0.06vw), 1.13rem);
+  --font-0: clamp(1.31rem, calc(1.24rem + 0.37vw), 1.5rem);
+  --font-1: clamp(1.58rem, calc(1.41rem + 0.83vw), 2rem);
+  --font-2: clamp(1.89rem, calc(1.59rem + 1.51vw), 2.67rem);
+  --font-3: clamp(2.27rem, calc(1.77rem + 2.51vw), 3.55rem);
+  --font-4: clamp(2.72rem, calc(1.94rem + 3.93vw), 4.74rem);
+  --font-5: clamp(3.27rem, calc(2.08rem + 5.95vw), 6.31rem);
+}
