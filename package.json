@@ -1,0 +1,11 @@
+{
+  "name": "ichat-server",
+  "version": "1.0.0",
+  "description": "chat app project",
+  "scripts": {
+    "start": "nodemon index.js",
+    "client": "npm start --prefix ./client",
+    "server": "nodemon server.js --prefix ./server",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
+  }
+}
