@@ -10,12 +10,17 @@ import Button from '../styles/components/Button';
 import moment from 'moment';
 import io from 'socket.io-client';
 
-const socket = io('ws://192.168.1.3', {
-  withCredentials: true,
-  extraHeaders: {
-    'my-custom-header': 'abcd',
-  },
-});
+const socket = io(
+  process.env.REACT_APP_ENV === 'dev'
+    ? process.env.REACT_APP_SOCKETIO_DEV
+    : process.env.REACT_APP_SOCKETIO_PRO,
+  {
+    withCredentials: true,
+    extraHeaders: {
+      'my-custom-header': 'abcd',
+    },
+  }
+);
 
 function Dashboard() {
   const [isConnected, setIsConnected] = useState(false);
@@ -89,7 +94,6 @@ function Dashboard() {
     socket.emit('join', { user: user });
 
     socket.on('message', ({ user, message }) => {
-      console.log('ss');
       createMessage({ user, message });
     });
 

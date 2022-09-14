@@ -18,6 +18,7 @@ function App() {
       return 'light';
     });
   };
+
   return (
     <ThemeProvider theme={theme === 'light' ? light : dark}>
       <AppProvider>
