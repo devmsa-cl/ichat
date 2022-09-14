@@ -10,17 +10,15 @@ import Button from '../styles/components/Button';
 import moment from 'moment';
 import io from 'socket.io-client';
 
-const socket = io(
-  process.env.REACT_APP_ENV === 'dev'
-    ? process.env.REACT_APP_SOCKETIO_DEV
-    : process.env.REACT_APP_SOCKETIO_PRO,
-  {
-    withCredentials: true,
-    extraHeaders: {
-      'my-custom-header': 'abcd',
-    },
-  }
-);
+const socketURL =
+  process.env.REACT_APP_ENV === 'pro' ? '' : process.env.REACT_APP_SOCKETIO_DEV;
+
+const socket = io(socketURL, {
+  withCredentials: true,
+  extraHeaders: {
+    'my-custom-header': 'abcd',
+  },
+});
 
 function Dashboard() {
   const [isConnected, setIsConnected] = useState(false);

@@ -8,12 +8,10 @@ const server = require('http').createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
+      'http://localhost:4000',
       'http://localhost:3000',
-      'http://localhost:*',
       'http://192.168.1.3:*',
-      '192.168.1.3:3000',
       '192.168.1.3:*',
-      '192.168.1.3:80',
       '*',
     ],
     allowedHeaders: ['my-custom-header'],
@@ -91,10 +89,9 @@ app.use('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'));
 });
 
-if (process.env.ENVIRONMENT == 'pro') {
-  console.log('hello');
-  server.use(express.static(path.join(__dirname, '..', 'client', 'build')));
-}
+// if (process.env.ENVIRONMENT == 'pro') {
+//   server.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+// }
 
 const port = process.env.ENVIRONMENT === 'dev' ? process.env.PORT : 80;
 
