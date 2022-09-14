@@ -20,6 +20,8 @@ const socket = io(socketURL, {
   },
 });
 
+console.log(socket);
+
 function Dashboard() {
   const [isConnected, setIsConnected] = useState(false);
   const [lastPong, setLastPong] = useState(null);

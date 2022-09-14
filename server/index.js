@@ -8,11 +8,11 @@ const server = require('http').createServer(app);
 const io = new Server(server, {
   cors: {
     origin: [
-      'http://localhost:4000',
       'http://localhost:3000',
+      'localhost',
+      '127.0.0.1',
       'http://192.168.1.3:*',
-      '192.168.1.3:*',
-      '192.168.1.200:*',
+      '0.0.0.0:*',
       '*',
     ],
     allowedHeaders: ['my-custom-header'],
@@ -94,7 +94,7 @@ app.use('*', (req, res) => {
 //   server.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 // }
 
-const port = process.env.ENVIRONMENT === 'dev' ? process.env.PORT : 87;
+const port = process.env.ENVIRONMENT === 'dev' ? process.env.PORT : 80;
 
 server.listen(port, () => {
   console.log('server has started on port ' + port);
