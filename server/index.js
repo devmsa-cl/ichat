@@ -93,7 +93,7 @@ app.use('*', (req, res) => {
 //   server.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 // }
 
-const port = process.env.ENVIRONMENT === 'dev' ? process.env.PORT : 80;
+const port = process.env.ENVIRONMENT === 'dev' ? process.env.PORT : 87;
 
 server.listen(port, () => {
   console.log('server has started on port ' + port);
