@@ -12,6 +12,7 @@ const io = new Server(server, {
       'http://localhost:3000',
       'http://192.168.1.3:*',
       '192.168.1.3:*',
+      '192.168.1.200:*',
       '*',
     ],
     allowedHeaders: ['my-custom-header'],
